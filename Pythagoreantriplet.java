@@ -1,6 +1,6 @@
 //Checking if an array justifies the Pythagorean theorem
 import java.util.*;
-public class Pythagoreancheck {
+public class Pythagoreantriplet {
 	public static void main(String args [])
 	{
 		Scanner sc = new Scanner(System.in);
