@@ -1,4 +1,4 @@
-//reversing k numbers in a linked list
+//reversing after k numbers in a linked list
 import java.util.Scanner;
 public class LLkrev {
 	class Node{
