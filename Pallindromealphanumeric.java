@@ -28,28 +28,30 @@ public class Pallindromealphanumeric {
 			str2[a]=str1[i];
 			a++;
 		}
-		System.out.println(str2);
+		//System.out.println(str2);
 		int flag=0;
 		for(int i=0;i<str.length()-1;i++)
 		{
-			if(str1[i]!=str2[i])
+			if(str1[i]==str2[i]||(str1[i]>=32&&str1[i]<=64)||(str1[i]>=91&&str1[i]<=96)||(str1[i]>=123)||(str2[i]>=32&&str2[i]<=64)||(str2[i]>=91&&str2[i]<=96)||(str2[i]>=123))
 			{
-				flag=0;
+				flag=1;
 			}
 			else if((str1[i]>=32&&str1[i]<=64)||(str1[i]>=91&&str1[i]<=96)||(str1[i]>=123)&&str1[i-1]==str2[i-1]&&str1[i+1]==str2[i+1])
 			{
 				flag=1;
 			}
-			else if(str1[i]==str2[i])
+			else if(str1[i]!=str2[i]&&str1[i]>=97&&str1[i]<=122&&str2[i]>=97&&str2[i]<=122)
 			{
-				flag=1;
+				flag=0;
+				//System.out.println(str1[i]+" "+str2[i]);
+				break;
 			}
 		}
 		if(flag==1)
 		{
 			System.out.println("YES");
 		}
-		else
+		else if(flag==0)
 		{
 			System.out.println("NO");
 		}
