@@ -1,6 +1,6 @@
-//pallindrome of alphanumeric numbers
+//palindrome of alphanumeric numbers
 import java.util.*;
-public class Pallindromealphanumeric {
+public class Palindromealphanumeric {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
