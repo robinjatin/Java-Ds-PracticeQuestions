@@ -1,4 +1,4 @@
-//palindrome of alphanumeric numbers
+//Palindrome of alphanumeric numbers
 import java.util.*;
 public class Palindromealphanumeric {
 
@@ -13,45 +13,42 @@ public class Palindromealphanumeric {
 		str=sc.nextLine();
 		for(int b=0;b<test;b++)
 		{
-		char str1[]=str.toCharArray();
+		char str1[]=new char[str.length()];
 		char str2[]=new char[str.length()];
 		int a=0;
 		for(int i=0;i<str.length();i++)
+		{
+			char ch=str.charAt(i);
+			if(ch!=' '&&((ch>=65&&ch<=90)||(ch>=97&&ch<=122)))
+			{
+				str1[a]=ch;
+				a++;
+			}
+		}
+		for(int i=0;i<a;i++)
 		{
 			if(str1[i]>=65&&str1[i]<=90)
 			{
 				str1[i]+=(char)32;
 			}
 		}
-		for(int i=str.length()-1;i>=0;i--)
+		int c=0;
+		for(int i=a-1;i>=0;i--)
 		{
-			str2[a]=str1[i];
-			a++;
+			str2[c]=str1[i];
+			c++;
 		}
-		//System.out.println(str2);
 		int flag=0;
-		for(int i=0;i<str.length()-1;i++)
+		for(int i=0;i<a;i++)
 		{
-			if(str1[i]==str2[i]||(str1[i]>=32&&str1[i]<=64)||(str1[i]>=91&&str1[i]<=96)||(str1[i]>=123)||(str2[i]>=32&&str2[i]<=64)||(str2[i]>=91&&str2[i]<=96)||(str2[i]>=123))
-			{
+			if(str1[i]!=str2[i])
 				flag=1;
-			}
-			else if((str1[i]>=32&&str1[i]<=64)||(str1[i]>=91&&str1[i]<=96)||(str1[i]>=123)&&str1[i-1]==str2[i-1]&&str1[i+1]==str2[i+1])
-			{
-				flag=1;
-			}
-			else if(str1[i]!=str2[i]&&str1[i]>=97&&str1[i]<=122&&str2[i]>=97&&str2[i]<=122)
-			{
-				flag=0;
-				//System.out.println(str1[i]+" "+str2[i]);
-				break;
-			}
 		}
-		if(flag==1)
+		if(flag==0)
 		{
 			System.out.println("YES");
 		}
-		else if(flag==0)
+		else if(flag==1)
 		{
 			System.out.println("NO");
 		}
@@ -61,7 +58,5 @@ public class Palindromealphanumeric {
 		str=sc.nextLine();
 		}
 		}
-		
 	}
-
 }
